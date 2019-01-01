@@ -399,6 +399,7 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, "Yout haven't picked Image", Toast.LENGTH_SHORT).show();
             }
         }
+
         GalleryFragment.imgAdapter.notifyDataSetChanged();
         GalleryFragment.gridView.invalidateViews();
         GalleryFragment.gridView.setAdapter(GalleryFragment.imgAdapter);
