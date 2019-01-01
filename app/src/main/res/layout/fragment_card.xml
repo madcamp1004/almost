@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_layout"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:showIn="@layout/fragment_card"
+    tools:context=".CardFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.wajahatkarim3.easyflipview.EasyFlipView
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/easyFilpView"
+            app:flipType="horizontal"
+            app:flipOnTouch="true"
+            app:flipDuration="500"
+            app:flipEnabled="true">
+
+            <ImageView
+                android:id="@+id/cardImage"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/flower"
+                android:layout_centerInParent="true"
+                />
+
+            <ImageView
+                android:id="@+id/userImage"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+            <!--<VideoView-->
+                <!--android:id="@+id/videoView"-->
+                <!--android:layout_width="350dp"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:visibility="gone"-->
+                <!--/>-->
+        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/nameCard"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/phoneCard"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="65dp"
+            android:id="@+id/addressCard"
+            />
+
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/cardImage"
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/capture"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="capture"
+            />
+        <Button
+            android:id="@+id/share"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="share"
+            />
+        <Button
+            android:id="@+id/storage"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="storage"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
