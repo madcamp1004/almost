@@ -27,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,6 +70,7 @@ public class CardFragment extends Fragment {
 
     EasyFlipView easyFlipView;
     ImageView userImage;
+    RelativeLayout layoutToCapture;
 
     private int[] images = {
             R.drawable.flower,
@@ -123,6 +125,7 @@ public class CardFragment extends Fragment {
         phoneCard = fragView.findViewById(R.id.phoneCard);
         addressCard = fragView.findViewById(R.id.addressCard);
         userImage = fragView.findViewById(R.id.userImage);
+        layoutToCapture = (RelativeLayout) fragView.findViewById(R.id.relativeLayout);
 
         adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
             @Override
@@ -191,9 +194,10 @@ public class CardFragment extends Fragment {
             // image naming and path  to include sd card  appending name you choose for file
            final String mPath = Environment.getExternalStorageDirectory().toString() + "/DCIM/Camera/" + now + ".jpg";
 
-            selectImage.setDrawingCacheEnabled(true);
-            final Bitmap bitmap = Bitmap.createBitmap(selectImage.getDrawingCache());
-            selectImage.setDrawingCacheEnabled(false);
+
+            layoutToCapture.setDrawingCacheEnabled(true);
+            final Bitmap bitmap = Bitmap.createBitmap(layoutToCapture.getDrawingCache());
+            layoutToCapture.setDrawingCacheEnabled(false);
 
             final File imageFile = new File(mPath);
 
